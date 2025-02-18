@@ -1,0 +1,7 @@
+<a *ngIf="!last && correspondingRoute" routerLink="[correspondingRoute.absolutePath]"
+  class="header-breadcrumb__item text-primary">
+  {{section}}
+</a>
+<span *ngIf="last || !correspondingRoute" [class]="'header-breadcrumb__item ' + (last ? 'text-white' : 'text-primary')">
+  {{section}}
+</span>

@@ -1,1 +1,10 @@
-<p>breadcrumb works!</p>
+<div class="header-breadcrumb__container my-5 pt-5 pb-4">
+  <h1 class="text-3 text-white mb-3 slideInDown">
+    {{ (activeRoute$ | async)?.headerTitle }}
+  </h1>
+  <nav class="header-breadcrumb">
+    <ng-container *ngFor="let section of activeRoutePath$ | async; let last = last">
+      <header-breadcrumb-item [section]="section" [last]="last" />
+    </ng-container>
+  </nav>
+</div>
